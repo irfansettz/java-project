@@ -4,7 +4,6 @@ import com.example.d10crud.entity.BookEntity;
 import lombok.Data;
 
 import java.util.List;
-import java.util.Map;
 
 @Data
 public class ResponseBook {
