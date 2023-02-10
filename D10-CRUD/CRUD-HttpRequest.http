@@ -1,0 +1,33 @@
+#Get All Books
+GET http://localhost:85/v1/api/books
+Accept: application/json
+
+###
+#Get Book by id
+GET http://localhost:85/v1/api/books/1
+Accept: application/json
+
+###
+#insert book
+POST http://localhost:85/v1/api/books
+Content-Type: application/json
+
+{
+  "name" : "test name 3",
+  "author": "irfan set"
+}
+
+###
+#update book by id
+PUT http://localhost:85/v1/api/books/5
+Content-Type: application/json
+
+{
+  "name" : "update id 5",
+  "author": "irfan updated"
+}
+
+###
+#Delete Book by id
+DELETE http://localhost:85/v1/api/books/5
+Accept: application/json
