@@ -1,0 +1,21 @@
+POST http://localhost:85/users
+Content-Type: application/json
+
+{
+  "email" : "irfan@gmail.com",
+  "password": "password"
+}
+
+###
+GET http://localhost:85/users
+Accept: application/json
+
+###
+PUT http://localhost:85/users/1
+Content-Type: application/json
+
+{
+  "email" : "irfan2@gmail.com",
+  "password": "password2"
+}
+###
