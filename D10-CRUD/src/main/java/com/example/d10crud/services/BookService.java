@@ -16,4 +16,6 @@ public interface BookService {
     void updateBookById(BookEntity bookEntity, long id);
 
     void deleteById(long id);
+
+    BookEntity updateReader(long id, long reader_id);
 }

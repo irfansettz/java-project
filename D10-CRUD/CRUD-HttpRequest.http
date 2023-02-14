@@ -1,3 +1,36 @@
+#####Reader endpoint
+#insert Reader
+POST http://localhost:85/v1/api/readers
+Content-Type: application/json
+
+{
+  "firstname" : "andika",
+  "lastname"  : "wijaya",
+  "age"       : 23
+}
+
+###
+#Get All Reader
+GET http://localhost:85/v1/api/readers
+Accept: application/json
+
+###
+#Get Reader by id
+GET http://localhost:85/v1/api/readers/1
+Accept: application/json
+
+#####Book End Point
+#insert book
+POST http://localhost:85/v1/api/books
+Content-Type: application/json
+
+{
+  "title": "Magic Carpet",
+  "page" : 199,
+  "year" : "2010"
+}
+
+###
 #Get All Books
 GET http://localhost:85/v1/api/books
 Accept: application/json
@@ -8,26 +41,25 @@ GET http://localhost:85/v1/api/books/1
 Accept: application/json
 
 ###
-#insert book
-POST http://localhost:85/v1/api/books
-Content-Type: application/json
 
-{
-  "name" : "test name 3",
-  "author": "irfan set"
-}
-
-###
 #update book by id
-PUT http://localhost:85/v1/api/books/5
+PUT http://localhost:85/v1/api/books/1
 Content-Type: application/json
 
 {
-  "name" : "update id 5",
-  "author": "irfan updated"
+  "title"     : "Magic Carpet Second Edition",
+  "page"      : 199,
+  "year"      : "2014"
 }
 
 ###
+#update reader by id
+PUT http://localhost:85/v1/api/books?id=1&reader_id=2
+Content-Type: application/json
+
+###
+
 #Delete Book by id
-DELETE http://localhost:85/v1/api/books/5
+DELETE http://localhost:85/v1/api/books/1
 Accept: application/json
+
