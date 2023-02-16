@@ -1,0 +1,34 @@
+POST localhost:85/v2/auth/register
+Content-Type: application/json
+
+{
+  "username" : "IrfanTest",
+  "phone": "081123456789",
+  "email" : "irfantest@gmail.com",
+  "password" : "Irfan@12345",
+  "name" : "irfan test",
+  "role" : "admin"
+}
+
+###
+
+POST localhost:85/v2/auth/login
+Content-Type: application/json
+
+{
+  "password" : "Irfan@12345",
+  "phone" : "081123456789"
+}
+
+> {%
+client.global.set("token", response.body.data);
+%}
+###
+
+GET localhost:85/v2/auth/all-users
+Authorization: Bearer {{token}}
+
+###
+
+GET localhost:85/v2/auth/info
+Authorization: Bearer {{token}}

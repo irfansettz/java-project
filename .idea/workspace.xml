@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08c62986-2f81-4f8a-91bd-ca4540121010" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/controller/ReaderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/dto/ResponseReaderDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/entity/ReaderEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/repository/ReaderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/services/ReaderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/services/implementation/ReaderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D10-CRUD/CRUD-HttpRequest.http" beforeDir="false" afterPath="$PROJECT_DIR$/D10-CRUD/CRUD-HttpRequest.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/dto/ResponseBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/dto/ResponseBookDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/entity/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/entity/BookEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/services/implementation/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/D10-CRUD/src/main/java/com/example/d10crud/services/implementation/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D10-CRUD/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/D10-CRUD/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/src/main/java/com/ikon/d12userauth/D12UserAuthApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D12-User-Auth/src/test/java/com/ikon/d12userauth/D12UserAuthApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +25,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2LWzNXq4ILRmm0vEtBIccrRBZAA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -52,6 +53,7 @@
       <workItem from="1676001597337" duration="497000" />
       <workItem from="1676003212787" duration="3286000" />
       <workItem from="1676294713653" duration="120000" />
+      <workItem from="1676447501591" duration="755000" />
     </task>
     <servers />
   </component>
@@ -80,5 +82,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
