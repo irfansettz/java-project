@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08c62986-2f81-4f8a-91bd-ca4540121010" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/src/main/java/com/ikon/d12userauth/D12UserAuthApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D12-User-Auth/src/test/java/com/ikon/d12userauth/D12UserAuthApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/src/main/java/com/ikon/d13crudswagger/D13CrudSwaggerApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/D13-CRUD-Swagger/src/test/java/com/ikon/d13crudswagger/D13CrudSwaggerApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +53,7 @@
       <workItem from="1676003212787" duration="3286000" />
       <workItem from="1676294713653" duration="120000" />
       <workItem from="1676447501591" duration="755000" />
+      <workItem from="1676596538110" duration="341000" />
     </task>
     <servers />
   </component>
