@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:85/v1/api/products/4
+GET http://localhost:85/v1/api/products/2
 Accept: application/json
 
 ###

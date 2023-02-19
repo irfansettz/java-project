@@ -3,6 +3,8 @@ package com.ikon.d13crudswagger.controller;
 import com.ikon.d13crudswagger.dto.ProductDTO;
 import com.ikon.d13crudswagger.dto.ResponseDTO;
 import com.ikon.d13crudswagger.entity.Product;
+import com.ikon.d13crudswagger.exception.ProductNotFoundException;
+import com.ikon.d13crudswagger.respository.ProductRepository;
 import com.ikon.d13crudswagger.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+    private final ProductRepository productRepository;
 
     @GetMapping
     public ResponseEntity<ProductDTO> getAllProduct(){
@@ -30,7 +33,8 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id){
+    public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id) {
+        if (productRepository.findById(id).isEmpty()) throw new ProductNotFoundException("Product Not Found");
         List<Product> product =  productService.getProductById(id);
         ProductDTO response = new ProductDTO();
         response.setCode(200);
@@ -53,6 +57,7 @@ public class ProductController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ProductDTO> updateProductById(@RequestBody Product product, @PathVariable Long id){
+        if (productRepository.findById(id).isEmpty()) throw new ProductNotFoundException("Product Not Found");
         List<Product> updatedProduct = productService.updateProductById(product, id);
         ProductDTO response = new ProductDTO();
         response.setCode(201);
@@ -64,6 +69,7 @@ public class ProductController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<ResponseDTO> deleteProductById(@PathVariable Long id){
+        if (productRepository.findById(id).isEmpty()) throw new ProductNotFoundException("Product Not Found");
         productService.deleteProductById(id);
         ResponseDTO response = new ResponseDTO();
         response.setCode(201);
