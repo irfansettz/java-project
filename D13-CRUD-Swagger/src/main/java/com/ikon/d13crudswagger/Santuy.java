@@ -14,7 +14,15 @@ public class Santuy {
         }
         return result;
     }
+    public static Integer factorial(Integer n){
+        Integer result = 1;
+        for (int i = n; i > 0 ; i--) {
+            result *= i;
+        }
+        return result;
+    }
     public static void main(String[] args) {
-        System.out.println(fibonacci(10));
+//        System.out.println(fibonacci(10));
+        System.out.println(factorial(3));
     }
 }
