@@ -1,0 +1,35 @@
+POST http://localhost:85/api/v1/books
+Content-Type: application/json
+
+{
+  "isbn" : "www-12376762-cccc",
+  "penulis": "irfan setiawan",
+  "judul": "Tutorial Membuat Judul",
+  "deskripsi": "Buku tentang bagaimana cara membuat judul yangg baik",
+  "kategori": "Tutorial"
+}
+
+###
+GET http://localhost:85/api/v1/books
+Accept: application/json
+
+###
+GET http://localhost:85/api/v1/books/9c927fda-6fe6-44bf-8da9-99eb37e927f9
+Accept: application/json
+
+###
+PUT http://localhost:85/api/v1/books/9c927fda-6fe6-44bf-8da9-99eb37e927f9
+Content-Type: application/json
+
+{
+  "isbn" : "www-12376762-cccc",
+  "penulis": "irfan setiawan",
+  "judul": "Tutorial Membuat Judul Jilid II",
+  "deskripsi": "Buku tentang bagaimana cara membuat judul yangg baik",
+  "kategori": "Tutorial"
+}
+
+###
+DELETE http://localhost:85/api/v1/books/9c927fda-6fe6-44bf-8da9-99eb37e927f9
+Accept: application/json
+
