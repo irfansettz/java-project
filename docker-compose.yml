@@ -4,8 +4,8 @@ services:
   # app
   D13-CRUD-Swagger:
     platform: 'linux/amd64'
-    image: 'D13-CRUD-Swagger:latest'
-    container_name: D13-CRUD-Swagger
+    image: 'd13-crud-swagger:latest'
+    container_name: d13-crud-swagger
     build:
       context: D13-CRUD-Swagger
       dockerfile: Dockerfile
@@ -23,8 +23,8 @@ services:
       - "8085:5000"
   D16-Redis:
     platform: 'linux/amd64'
-    image: 'D16-Redis:latest'
-    container_name: D16-Redis
+    image: 'd16-Redis:latest'
+    container_name: d16-Redis
     build:
       context: D16-Redis
       dockerfile: Dockerfile
@@ -38,7 +38,7 @@ services:
     expose:
       - "5001"
     ports:
-      - "8086:5000"
+      - "8086:5001"
   # database & cache
   ikon-db:
     image: 'postgres:15-alpine'
