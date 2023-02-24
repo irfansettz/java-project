@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+  # app
+  D13-CRUD-Swagger:
+    platform: 'linux/amd64'
+    image: 'D13-CRUD-Swagger:latest'
+    container_name: D13-CRUD-Swagger
+    build:
+      context: D13-CRUD-Swagger
+      dockerfile: Dockerfile
+    depends_on:
+      - ikon-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ikon-db:5432/ikon_db
+      - SPRING_DATASOURCE_USERNAME=ikon_db
+      - SPRING_DATASOURCE_PASSWORD=ikon_db
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SERVER_PORT=5000
+    expose:
+      - "5000"
+    ports:
+      - "8085:5000"
+  D16-Redis:
+    platform: 'linux/amd64'
+    image: 'D16-Redis:latest'
+    container_name: D16-Redis
+    build:
+      context: D16-Redis
+      dockerfile: Dockerfile
+    depends_on:
+      - cache-redis-db
+    environment:
+      - spring.redis.host=cache-redis-db
+      - spring.redis.port=6379
+      - REDIS_PASSWORD=eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+      - SERVER_PORT=5001
+    expose:
+      - "5001"
+    ports:
+      - "8086:5000"
+  # database & cache
+  user-db:
+    image: 'postgres:15-alpine'
+    container_name: ikon-db
+    environment:
+      - POSTGRES_USER=ikon_db
+      - POSTGRES_PASSWORD=ikon_db
+      - POSTGRES_DB=ikon_db
+    volumes:
+      - ikon_db:/var/lib/postgresql/data
+    ports:
+      - "5438:5432"
+  cache-redis-db:
+    image: redis:6.2-alpine
+    container_name: cache-redis-db
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - cache_redis_db:/data
+volumes:
+  ikon_db:
+  cache_redis_db:
+
+
