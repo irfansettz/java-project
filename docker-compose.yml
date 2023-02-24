@@ -23,8 +23,8 @@ services:
       - "8085:5000"
   D16-Redis:
     platform: 'linux/amd64'
-    image: 'd16-Redis:latest'
-    container_name: d16-Redis
+    image: 'd16-redis:latest'
+    container_name: d16-redis
     build:
       context: D16-Redis
       dockerfile: Dockerfile
