@@ -1,0 +1,94 @@
+version: '3'
+
+services:
+  # app
+  product-service:
+    platform: 'linux/amd64'
+    image: 'product-service:latest'
+    container_name: product-service
+    restart: unless-stopped
+    build:
+      context: product-service
+      dockerfile: Dockerfile
+    depends_on:
+      - master-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://master-db:5432/master_db
+      - SPRING_DATASOURCE_USERNAME=irfan
+      - SPRING_DATASOURCE_PASSWORD=12345678
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SERVER_PORT=80
+    expose:
+      - "80"
+    ports:
+      - "8060:80"
+  merchant-service:
+    platform: 'linux/amd64'
+    image: 'merchant-service:latest'
+    container_name: merchant-service
+    restart: unless-stopped
+    build:
+      context: merchant-service
+      dockerfile: Dockerfile
+    depends_on:
+      - master-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://master-db:5432/master_db
+      - SPRING_DATASOURCE_USERNAME=irfan
+      - SPRING_DATASOURCE_PASSWORD=12345678
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SERVER_PORT=80
+    expose:
+      - "80"
+    ports:
+      - "8061:80"
+  order-service:
+    platform: 'linux/amd64'
+    image: 'order-service:latest'
+    container_name: order-service
+    restart: unless-stopped
+    build:
+      context: order-service
+      dockerfile: Dockerfile
+    depends_on:
+      - transaksi-db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://transaksi-db:5432/transaksi_db
+      - SPRING_DATASOURCE_USERNAME=irfan
+      - SPRING_DATASOURCE_PASSWORD=12345678
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SERVER_PORT=80
+    expose:
+      - "80"
+    ports:
+      - "8062:80"
+  # database
+  master-db:
+    image: 'postgres:15-alpine'
+    container_name: master-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=irfan
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_DB=master_db
+    volumes:
+      - master_db:/var/lib/postgresql/data/master_db
+    ports:
+      - "5432:5432"
+  transaksi-db:
+    image: 'postgres:15-alpine'
+    container_name: transaksi-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=irfan
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_DB=transaksi_db
+    volumes:
+      - transaksi_db:/var/lib/postgresql/data/transaksi_db
+    ports:
+      - "5433:5432"
+volumes:
+  master_db:
+  transaksi_db:
+
+
