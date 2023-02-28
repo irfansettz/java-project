@@ -29,6 +29,6 @@ jobs:
           username: ${{ secrets.EC2_INSTANCE_NAME }}
           password: ${{ secrets.EC2_INSTANCE_PASSWORD }}
           script: |
-            cd /home/ikon/microservices-project/
+            cd /home/ikon/microservices-project/D17-Microservices
             docker-compose down
             docker-compose up -d
