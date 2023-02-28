@@ -1,0 +1,18 @@
+GET http://localhost:8061/v1/api/merchants/1
+Accept: application/json
+
+###
+GET http://localhost:8061/v1/api/merchants
+Accept: application/json
+
+###
+POST http://localhost:8061/v1/api/merchants
+Content-Type: application/json
+
+{
+  "name": "Merchant 1",
+  "year": 2023,
+  "address": "Address address no 54, Address-address"
+}
+
+###
