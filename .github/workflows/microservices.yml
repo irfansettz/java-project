@@ -1,4 +1,4 @@
-name: Build and deploy microservices-project
+name: CI/CD microservices-project
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
           host: ${{ secrets.EC2_INSTANCE_HOST }}
           username: ${{ secrets.EC2_INSTANCE_NAME }}
           password: ${{ secrets.EC2_INSTANCE_PASSWORD }}
-          source: /D17-Microservices/
+          source: ./D17-Microservices/
           target: /home/ikon/microservices-project/
 
       - name: SSH into EC2 instance and deploy
