@@ -1,0 +1,22 @@
+POST http://localhost:8062/v1/api/orders
+Content-Type: application/json
+
+{
+  "productid" : 2,
+  "qty": 1,
+  "userid": 1,
+  "finished": false
+}
+
+###
+GET http://localhost:8062/v1/api/orders?userid=1
+Accept: application/json
+
+###
+
+GET http://localhost:8062/v1/api/orders/1
+Accept: application/json
+
+###
+
+
