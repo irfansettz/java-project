@@ -1,0 +1,26 @@
+GET http://localhost:8060/v1/api/products/1
+Accept: application/json
+
+###
+GET http://localhost:8060/v1/api/products
+Accept: application/json
+
+###
+POST http://localhost:8060/v1/api/products
+Content-Type: application/json
+
+{
+  "name": "Product 1",
+  "description": "This is product 1",
+  "stock": 4,
+  "price": 2000.0,
+  "merchantid": 1
+}
+
+###
+
+DELETE http://localhost:8060/v1/api/products/1
+Accept: application/json
+
+###
+
