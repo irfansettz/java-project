@@ -19,7 +19,7 @@ jobs:
           host: ${{ secrets.EC2_INSTANCE_HOST }}
           username: ${{ secrets.EC2_INSTANCE_NAME }}
           password: ${{ secrets.EC2_INSTANCE_PASSWORD }}
-          source: ./D17-Microservices
+          source: ./D20-Microservices
           target: /home/ikon/microservices-project/
 
       - name: SSH into EC2 instance and deploy
@@ -29,6 +29,6 @@ jobs:
           username: ${{ secrets.EC2_INSTANCE_NAME }}
           password: ${{ secrets.EC2_INSTANCE_PASSWORD }}
           script: |
-            cd /home/ikon/microservices-project/D17-Microservices
+            cd /home/ikon/microservices-project/D20-Microservices
             docker-compose down
             docker-compose up -d

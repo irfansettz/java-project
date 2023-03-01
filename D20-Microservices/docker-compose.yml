@@ -8,7 +8,7 @@ services:
     container_name: product-service
     restart: unless-stopped
     build:
-      context: product-services
+      context: product-service
       dockerfile: Dockerfile
     depends_on:
       - master-db
@@ -28,7 +28,7 @@ services:
     container_name: merchant-service
     restart: unless-stopped
     build:
-      context: merchant-services
+      context: merchant-service
       dockerfile: Dockerfile
     depends_on:
       - master-db
@@ -45,7 +45,7 @@ services:
   order-service:
     platform: 'linux/amd64'
     image: 'order-service:latest'
-    container_name: order-services
+    container_name: order-service
     restart: unless-stopped
     build:
       context: order-service
