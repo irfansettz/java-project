@@ -17,11 +17,11 @@ services:
       - SPRING_DATASOURCE_USERNAME=irfan
       - SPRING_DATASOURCE_PASSWORD=12345678
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SERVER_PORT=80
+      - SERVER_PORT=8060
     expose:
-      - "80"
+      - "8060"
     ports:
-      - "8060:80"
+      - "8060:8060"
   merchant-service:
     platform: 'linux/amd64'
     image: 'merchant-service:latest'
@@ -37,11 +37,11 @@ services:
       - SPRING_DATASOURCE_USERNAME=irfan
       - SPRING_DATASOURCE_PASSWORD=12345678
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SERVER_PORT=80
+      - SERVER_PORT=8061
     expose:
-      - "80"
+      - "8061"
     ports:
-      - "8061:80"
+      - "8061:8061"
   order-service:
     platform: 'linux/amd64'
     image: 'order-service:latest'
@@ -57,11 +57,11 @@ services:
       - SPRING_DATASOURCE_USERNAME=irfan
       - SPRING_DATASOURCE_PASSWORD=12345678
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-      - SERVER_PORT=80
+      - SERVER_PORT=8062
     expose:
-      - "80"
+      - "8062"
     ports:
-      - "8062:80"
+      - "8062:8062"
   # database
   master-db:
     image: 'postgres:15-alpine'

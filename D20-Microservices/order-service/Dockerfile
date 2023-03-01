@@ -15,6 +15,6 @@ WORKDIR /opt/app/
 
 COPY --from=maven /usr/src/app/target/${JAR_FILE} /opt/app
 
-EXPOSE 80
+EXPOSE 8062
 
 ENTRYPOINT ["java", "-jar", "order-service-0.0.1-SNAPSHOT.jar"]
