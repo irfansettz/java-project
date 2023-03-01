@@ -48,7 +48,7 @@ public class OrderController {
 
     @PostMapping
     public ResponseEntity<OrderDTO> createOrder(@RequestBody Order order) throws IOException {
-        URL url = new URL("http://localhost:8060/v1/api/products/" + order.getProductid());
+        URL url = new URL("http://product-service:8060/v1/api/products/" + order.getProductid());
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
         int status = con.getResponseCode();

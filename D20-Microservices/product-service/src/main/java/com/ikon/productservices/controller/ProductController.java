@@ -51,7 +51,7 @@ public class ProductController {
 
     @PostMapping
     public ResponseEntity<ProductDTO> createProduct(@RequestBody Product product) throws IOException {
-        URL url = new URL("http://localhost:8061/v1/api/merchants/" + product.getMerchantid());
+        URL url = new URL("http://merchant-service:8061/v1/api/merchants/" + product.getMerchantid());
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
