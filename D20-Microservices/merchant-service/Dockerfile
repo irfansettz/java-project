@@ -9,7 +9,7 @@ COPY src/ src/
 RUN mvn package -DskipTests
 
 FROM openjdk:17-jdk-slim
-ARG JAR_FILE=merchant-service-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=merchant-services-0.0.1-SNAPSHOT.jar
 
 WORKDIR /opt/app/
 
@@ -17,4 +17,4 @@ COPY --from=maven /usr/src/app/target/${JAR_FILE} /opt/app
 
 EXPOSE 80
 
-ENTRYPOINT ["java", "-jar", "merchant-service-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "merchant-services-0.0.1-SNAPSHOT.jar"]
