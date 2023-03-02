@@ -97,9 +97,9 @@ services:
       - SPRING_RABBITMQ_PASSWORD=guest
       - SPRING_RABBITMQ_VIRTUAL-host=
     expose:
-      - "8083"
+      - "8063"
     ports:
-      - "8083:8083"
+      - "8063:8063"
   # database & message & cache
   master-db:
     image: 'postgres:15-alpine'
