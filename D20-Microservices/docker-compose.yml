@@ -62,7 +62,45 @@ services:
       - "8062"
     ports:
       - "8062:8062"
-  # database
+  rabbitmq-producer-service:
+    platform: 'linux/amd64'
+    image: 'rabbitmq-producer-service:latest'
+    container_name: rabbitmq-producer-service
+    build:
+      context: rabbitmq-service-producer
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=guest
+      - SPRING_RABBITMQ_PASSWORD=guest
+      - SPRING_RABBITMQ_VIRTUAL-host=/
+    expose:
+      - "8064"
+    ports:
+      - "8064:8064"
+  rabbitmq-consumer-service:
+    platform: 'linux/amd64'
+    image: 'rabbitmq-consumer-service:latest'
+    container_name: rabbitmq-consumer-service
+    build:
+      context: rabbitmq-service-consumer
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+    environment:
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME=guest
+      - SPRING_RABBITMQ_PASSWORD=guest
+      - SPRING_RABBITMQ_VIRTUAL-host=
+    expose:
+      - "8083"
+    ports:
+      - "8083:8083"
+  # database & message & cache
   master-db:
     image: 'postgres:15-alpine'
     container_name: master-db
@@ -91,8 +129,22 @@ services:
       - "5432"
     ports:
       - "5434:5432"
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq-local'
+    expose:
+      - "15672"
+      - "5672"
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    volumes:
+      - rabbit_mq1:/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - rabbit_mq2:/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
 volumes:
   master_db:
   transaksi_db:
+  rabbit_mq1:
+  rabbit_mq2:
 
 

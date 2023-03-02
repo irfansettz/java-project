@@ -1,0 +1,11 @@
+GET http://localhost:8064/v1/api/rabbitmq-producer/send-data?message=hiiiiii
+Accept: application/json
+
+###
+POST localhost:8064/v1/api/rabbitmq-producer/send-data
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "irs"
+}
